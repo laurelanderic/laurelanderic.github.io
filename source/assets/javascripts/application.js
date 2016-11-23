@@ -1,5 +1,10 @@
 /* eslint-disable */
-//= require_tree .
+//= require vendor/velocity.min
+//= require vendor/velocity.ui.min
+//= require vendor/ScrollMagic.min
+//= require vendor/plugins/jquery.ScrollMagic.min
+//= require vendor/plugins/animation.velocity.min
+//= require vendor/plugins/debug.addIndicators.min
 /* eslint-enable */
 
 var ScrollMagic = ScrollMagic || {}
@@ -21,6 +26,7 @@ $(function() { // wait for document ready
       triggerElement: slides[i]
     })
       .setPin(slides[i])
+      // .setVelocity(slides[i], {opacity: 0}, {duration: 400})
       .addIndicators() // add indicators (requires plugin)
       .addTo(controller)
   }

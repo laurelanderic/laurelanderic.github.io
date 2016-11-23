@@ -2,36 +2,18 @@ body {
   width: 100%;
 }
 
-// Typography
-h6 { font-size: modular-scale(-1); }
-h5 { font-size: modular-scale(0); }
-h4 { font-size: modular-scale(1); }
-h3 { font-size: modular-scale(2); }
-h2 { font-size: modular-scale(3); }
-h1 { font-size: modular-scale(4); }
-
 // Full-width section elements
 .section {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  // Important required due to ScrollMagic bug
-  // scss-lint:disable ImportantRule
   width: 100% !important;
-  // scss-lint:enable ImportantRule
-
-  @include media($medium-screen-up) {
-    justify-content: center;
-  }
+  @include media($medium-screen-up) { justify-content: center; }
 
   &__inner {
     @include outer-container;
     padding: $base-spacing;
-
-    @include media($medium-screen-up) {
-      font-size: modular-scale(1);
-      padding: 0;
-    }
+    @include media($medium-screen-up) { font-size: modular-scale(1); padding: 0; }
   }
 
   &__header {
@@ -49,19 +31,16 @@ h1 { font-size: modular-scale(4); }
   }
 
   // Section types
-  &.welcome {
-    background-color: $light-gray;
-  }
+  &.welcome { background-color: $light-gray; }
+  &.event-info { background-color: $medium-gray; }
+  &.travel-accommodations { background-color: $dark-gray; }
+  &.join-us { background-color: $light-gray; }
 
-  &.event-info {
-    background-color: $medium-gray;
-  }
-
-  &.travel-accommodations {
-    background-color: $dark-gray;
-  }
-
-  &.join-us {
-    background-color: $light-gray;
-  }
+  // Typography
+  h6 { font-size: modular-scale(-1); }
+  h5 { font-size: modular-scale(0); }
+  h4 { font-size: modular-scale(1); }
+  h3 { font-size: modular-scale(2); }
+  h2 { font-size: modular-scale(3); }
+  h1 { font-size: modular-scale(4); }
 }
