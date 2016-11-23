@@ -1,19 +1,57 @@
 body {
-  background-color: $light-gray;
-  color: $medium-gray;
+  width: 100%;
 }
 
-.delete-me {
-  align-items: center;
+.section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   height: 100vh;
+  // Important required due to ScrollMagic bug
+  // scss-lint:disable ImportantRule
+  width: 100% !important;
+  // scss-lint:enable ImportantRule
 
-  .container {
-    text-align: center;
+  @include media($medium-screen-up) {
+    justify-content: center;
+  }
 
-    h1 {
-      font-weight: 200;
+  &__inner {
+    @include outer-container;
+    padding: $base-spacing;
+
+    @include media($medium-screen-up) {
+      padding: 0;
     }
+  }
+
+  &__header {
+    @include media($medium-screen-up) {
+      @include span-columns(8 of 12);
+      @include shift(2);
+    }
+  }
+
+  &__content {
+    @include media($medium-screen-up) {
+      @include span-columns(8 of 12);
+      @include shift(2);
+    }
+  }
+
+  // Section types
+  &.welcome {
+    background-color: $light-gray;
+  }
+
+  &.event-info {
+    background-color: $medium-gray;
+  }
+
+  &.travel-accommodations {
+    background-color: $dark-gray;
+  }
+
+  &.join-us {
+    background-color: $light-gray;
   }
 }
