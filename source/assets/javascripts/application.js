@@ -19,6 +19,8 @@ $(function() { // wait for document ready
 
   // get all slides
   var slides = document.querySelectorAll('.section')
+  var slideContents = document.querySelectorAll('.section__inner')
+  var offsetHeight = $(window).height() * 0.75
 
   // create scene for every slide
   for (var i = 0; i < slides.length; i++) {
@@ -26,8 +28,17 @@ $(function() { // wait for document ready
       triggerElement: slides[i]
     })
       .setPin(slides[i])
-      // .setVelocity(slides[i], {opacity: 0}, {duration: 400})
-      .addIndicators() // add indicators (requires plugin)
+      .addIndicators()
+      .addTo(controller)
+  }
+
+  for (var j = 0; j < slideContents.length; j++) {
+    new ScrollMagic.Scene({
+      triggerElement: slides[j]
+    })
+      .setVelocity(slideContents[j], {opacity: 0}, { duration: 400 })
+      .offset(offsetHeight)
+      .addIndicators()
       .addTo(controller)
   }
 })

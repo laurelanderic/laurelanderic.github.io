@@ -1,19 +1,23 @@
 body {
-  width: 100%;
+  @include linear-gradient(to bottom, #44b3e8, #e29e94, #000d46)
 }
 
 // Full-width section elements
 .section {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 600px;
   width: 100% !important;
-  @include media($medium-screen-up) { justify-content: center; }
+
+  @include media($medium-screen-up) {
+    height: 100vh;
+    justify-content: center;
+  }
 
   &__inner {
     @include outer-container;
     padding: $base-spacing;
-    @include media($medium-screen-up) { font-size: modular-scale(1); padding: 0; }
+    @include media($medium-screen-up) { font-size: modular-scale(2); padding: 0; }
   }
 
   &__header {
@@ -31,10 +35,21 @@ body {
   }
 
   // Section types
-  &.welcome { background-color: $light-gray; }
-  &.event-info { background-color: $medium-gray; }
-  &.travel-accommodations { background-color: $dark-gray; }
-  &.join-us { background-color: $light-gray; }
+  &.welcome,
+  &.event-info,
+  &.travel-accommodations,
+  &.join-us {
+    color: #fff;
+
+    @include media($medium-screen-up) {
+      margin-bottom: 500px;
+    }
+  }
+
+  &.welcome {}
+  &.event-info {}
+  &.travel-accommodations {}
+  &.join-us {}
 
   // Typography
   h6 { font-size: modular-scale(-1); }
