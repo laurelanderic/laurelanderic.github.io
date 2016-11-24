@@ -40,6 +40,7 @@ body {
   &.travel-accommodations,
   &.join-us {
     color: #fff;
+    margin-bottom: 200px;
 
     @include media($medium-screen-up) {
       margin-bottom: 500px;
