@@ -596,7 +596,8 @@ body {
       .section__content:last-child {
         margin-right: 0; } }
   .section.welcome, .section.event-info, .section.travel-accommodations, .section.join-us {
-    color: #fff; }
+    color: #fff;
+    margin-bottom: 200px; }
     @media screen and (min-width: 600px) {
       .section.welcome, .section.event-info, .section.travel-accommodations, .section.join-us {
         margin-bottom: 500px; } }
