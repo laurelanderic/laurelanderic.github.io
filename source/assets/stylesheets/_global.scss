@@ -1,5 +1,24 @@
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
-  @include linear-gradient(to bottom, #44b3e8, #e29e94, #000d46)
+  @include linear-gradient(to bottom, #033d5e, #00111e);
+}
+
+canvas {
+  @include animation(fadeIn 3s ease-in);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 // Full-width section elements
