@@ -542,11 +542,30 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 body {
-  background-color: #44b3e8;
-  background-image: -webkit-linear-gradient(top, #44b3e8, #e29e94, #000d46);
-  background-image: -webkit-linear-gradient(top,#44b3e8, #e29e94, #000d46);
-  background-image: linear-gradient(to bottom,#44b3e8, #e29e94, #000d46); }
+  background-color: #033d5e;
+  background-image: -webkit-linear-gradient(top, #033d5e, #00111e);
+  background-image: -webkit-linear-gradient(top,#033d5e, #00111e);
+  background-image: linear-gradient(to bottom,#033d5e, #00111e); }
+
+canvas {
+  -webkit-animation: fadeIn 3s ease-in;
+  animation: fadeIn 3s ease-in;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%; }
 
 .section {
   display: -webkit-box;
