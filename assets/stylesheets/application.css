@@ -601,6 +601,16 @@ body {
     @media screen and (min-width: 600px) {
       .section.welcome, .section.event-info, .section.travel-accommodations, .section.join-us {
         margin-bottom: 500px; } }
+  .section.welcome .section__content {
+    margin-left: 0%; }
+    @media screen and (min-width: 600px) {
+      .section.welcome .section__content {
+        width: 600px; } }
+    @media screen and (min-width: 900px) {
+      .section.welcome .section__content {
+        width: 900px; } }
+  .section.welcome img {
+    width: 100%; }
   .section h6 {
     font-size: 0.8em; }
   .section h5 {
@@ -613,3 +623,35 @@ body {
     font-size: 1.95313em; }
   .section h1 {
     font-size: 2.44141em; }
+
+.nav-bar {
+  height: 35px;
+  line-height: 35px;
+  margin-top: 0.75em;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 100; }
+
+.nav-link-list {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .nav-link-list::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+.nav-link-item {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  display: inline-block;
+  font-size: 1.125em;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+  .nav-link-item:last-child {
+    margin-right: 0; }
+  .nav-link-item a {
+    color: #fff; }
