@@ -8,15 +8,13 @@
 /* eslint-enable */
 
 var ScrollMagic = ScrollMagic || {}
+var controller = new ScrollMagic.Controller({
+  globalSceneOptions: {
+    triggerHook: 'onLeave'
+  }
+})
 
 $(function() { // wait for document ready
-  // init
-  var controller = new ScrollMagic.Controller({
-    globalSceneOptions: {
-      triggerHook: 'onLeave'
-    }
-  })
-
   // get all slides
   var slides = document.querySelectorAll('.section')
   var slideContents = document.querySelectorAll('.section__inner')
@@ -36,9 +34,30 @@ $(function() { // wait for document ready
     new ScrollMagic.Scene({
       triggerElement: slides[j]
     })
-      .setVelocity(slideContents[j], {opacity: 0}, { duration: 400 })
+      .setVelocity(slideContents[j], {opacity: 0}, { duration: 300 })
       .offset(offsetHeight)
       .addIndicators()
       .addTo(controller)
   }
 })
+
+//  bind scroll to anchor links
+$(document).on('click', "a[href^='#']", function(e) {
+  var id = $(this).attr('href')
+  if ($(id).length > 0) {
+    e.preventDefault()
+
+    controller.scrollTo(function(newScrollPos) {
+      $('html, body').animate({scrollTop: newScrollPos})
+    })
+
+    // trigger scroll
+    controller.scrollTo(id)
+
+    // if supported by the browser we can even update the URL.
+    if (window.history && window.history.pushState) {
+      window.history.pushState('', document.title, id)
+    }
+  }
+})
+

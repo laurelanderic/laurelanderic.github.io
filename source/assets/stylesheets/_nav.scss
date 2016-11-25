@@ -1,0 +1,27 @@
+$nav-bar-height: 35px;
+
+.nav-bar {
+  height: $nav-bar-height;
+  line-height: $nav-bar-height;
+  margin-top: $small-spacing;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+
+  @include media($medium-screen-up) {}
+}
+
+.nav-link-list {
+  @include outer-container;
+}
+
+.nav-link-item {
+  @include span-columns(2);
+  display: inline-block;
+  font-size: $base-font-size * 1.125;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  a { color: #fff }
+}

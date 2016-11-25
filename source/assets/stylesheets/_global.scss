@@ -22,14 +22,14 @@ body {
 
   &__header {
     @include media($medium-screen-up) {
-      @include span-columns(8 of 12);
+      @include span-columns(8);
       @include shift(2);
     }
   }
 
   &__content {
     @include media($medium-screen-up) {
-      @include span-columns(8 of 12);
+      @include span-columns(8);
       @include shift(2);
     }
   }
@@ -47,7 +47,17 @@ body {
     }
   }
 
-  &.welcome {}
+  &.welcome {
+    .section__content {
+      @include shift(0);
+      @include media($medium-screen-up) {width: $medium-screen;}
+      @include media($large-screen-up) {width: $large-screen;}
+    }
+
+    img { width: 100%; }
+  }
+
+
   &.event-info {}
   &.travel-accommodations {}
   &.join-us {}
