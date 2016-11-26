@@ -1,24 +1,75 @@
 @include keyframes(fadeIn) {
-  0% {
-    opacity: 0;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-  100% {
-    opacity: 1;
-  }
+%fade-in-slow {
+  @include animation(fadeIn 3s ease-in);
+  @include animation-fill-mode(backwards);
+  @include animation-delay(1s);
+}
+
+%fade-in-fast {
+  @include animation(fadeIn 1s ease-in);
+  @include animation-fill-mode(backwards);
 }
 
 body {
   @include linear-gradient(to bottom, #033d5e, #00111e);
 }
 
+// Typography
+h6 { font-size: modular-scale(-1); }
+h5 { font-size: modular-scale(0); }
+h4 { font-size: modular-scale(1); }
+h3 { font-size: modular-scale(2); }
+h2 { font-size: modular-scale(3); }
+h1 { font-size: modular-scale(4); }
+
 canvas {
-  @include animation(fadeIn 3s ease-in);
+  @extend %fade-in-slow;
   height: 100%;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.page-title {
+  @extend %fade-in-fast;
+  font-size: modular-scale(5);
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include media($medium-screen-up) {
+    font-size: modular-scale(6);
+  }
+
+  @include media($large-screen-up) {
+    font-size: modular-scale(7)
+  }
+}
+
+.page-subtitle {
+  @extend %fade-in-fast;
+  @include animation-delay(1s);
+  font-size: modular-scale(0);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page-location {
+  @extend %fade-in-fast;
+  @include animation-delay(1s);
+  font-size: modular-scale(0);
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-top: $base-spacing;
+  text-align: center;
 }
 
 // Full-width section elements
@@ -60,32 +111,20 @@ canvas {
   &.join-us {
     color: #fff;
     margin-bottom: 200px;
-
-    @include media($medium-screen-up) {
-      margin-bottom: 500px;
-    }
+    @include media($medium-screen-up) { margin-bottom: 500px; }
   }
 
   &.welcome {
     .section__content {
-      @include shift(0);
-      @include media($medium-screen-up) {width: $medium-screen;}
-      @include media($large-screen-up) {width: $large-screen;}
+      @include media($medium-screen-up) {
+        @include span-columns(12);
+        @include shift(0);
+      }
     }
-
-    img { width: 100%; }
   }
-
 
   &.event-info {}
   &.travel-accommodations {}
   &.join-us {}
 
-  // Typography
-  h6 { font-size: modular-scale(-1); }
-  h5 { font-size: modular-scale(0); }
-  h4 { font-size: modular-scale(1); }
-  h3 { font-size: modular-scale(2); }
-  h2 { font-size: modular-scale(3); }
-  h1 { font-size: modular-scale(4); }
 }

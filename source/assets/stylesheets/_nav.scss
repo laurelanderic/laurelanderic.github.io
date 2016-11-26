@@ -1,6 +1,8 @@
 $nav-bar-height: 35px;
 
 .nav-bar {
+  @extend %fade-in-fast;
+  @include animation-delay(2s);
   height: $nav-bar-height;
   line-height: $nav-bar-height;
   margin-top: $small-spacing;
