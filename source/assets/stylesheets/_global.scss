@@ -15,7 +15,7 @@
 }
 
 body {
-  @include linear-gradient(to bottom, #033d5e, #00111e);
+  @include linear-gradient(to bottom, $sky-gradient-start, $sky-gradient-stop);
 }
 
 // Typography
@@ -43,13 +43,8 @@ canvas {
   text-align: center;
   text-transform: uppercase;
 
-  @include media($medium-screen-up) {
-    font-size: modular-scale(6);
-  }
-
-  @include media($large-screen-up) {
-    font-size: modular-scale(7)
-  }
+  @include media($medium-screen-up) { font-size: modular-scale(6); }
+  @include media($large-screen-up) { font-size: modular-scale(7); }
 }
 
 .page-subtitle {
@@ -109,7 +104,7 @@ canvas {
   &.event-info,
   &.travel-accommodations,
   &.join-us {
-    color: #fff;
+    color: $white;
     margin-bottom: 200px;
     @include media($medium-screen-up) { margin-bottom: 500px; }
   }
@@ -119,6 +114,7 @@ canvas {
       @include media($medium-screen-up) {
         @include span-columns(12);
         @include shift(0);
+        padding-top: 150px;
       }
     }
   }
@@ -126,5 +122,4 @@ canvas {
   &.event-info {}
   &.travel-accommodations {}
   &.join-us {}
-
 }
