@@ -33,7 +33,9 @@ function drawCanvas() {
 
 // bind anchor links
 function bindAnchorLink(e) {
+  var $navMenu = $('.nav-link-list')
   var id = $(this).attr('href')
+
   if ($(id).length > 0) {
     e.preventDefault()
     controller.scrollTo(function(newScrollPos) {
@@ -46,7 +48,20 @@ function bindAnchorLink(e) {
     if (window.history && window.history.pushState) {
       window.history.pushState('', document.title, id)
     }
+
+    if ($navMenu.hasClass('mobile-nav-visible')) {
+      $navMenu.removeClass('mobile-nav-visible')
+    }
   }
+}
+
+function mobileNavSetup() {
+  var $trigger = $('#mobile-nav-toggle')
+  var $navMenu = $('.nav-link-list')
+
+  $trigger.on('click', function() {
+    $navMenu.toggleClass('mobile-nav-visible')
+  })
 }
 
 // Global Vars
@@ -55,8 +70,10 @@ var controller = new ScrollMagic.Controller({
   globalSceneOptions: {triggerHook: 'onLeave'}
 })
 
+// Document Ready:
 $(function() {
   drawCanvas()
+  mobileNavSetup()
 
   var slides = document.querySelectorAll('.section')
   var slideContents = document.querySelectorAll('.section__inner')
