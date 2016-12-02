@@ -675,11 +675,11 @@ canvas {
       margin-left: 17.05961%; }
       .section__content:last-child {
         margin-right: 0; } }
-  .section.welcome, .section.event-info, .section.travel-accommodations, .section.join-us {
+  .section.welcome, .section.event-info, .section.travel-accommodations, .section.registry, .section.join-us {
     color: #fff;
     margin-bottom: 200px; }
     @media screen and (min-width: 600px) {
-      .section.welcome, .section.event-info, .section.travel-accommodations, .section.join-us {
+      .section.welcome, .section.event-info, .section.travel-accommodations, .section.registry, .section.join-us {
         margin-bottom: 500px; } }
   @media screen and (min-width: 600px) {
     .section.welcome .section__content {
@@ -687,40 +687,66 @@ canvas {
       display: block;
       margin-right: 2.35765%;
       width: 100%;
-      margin-left: 0%; }
+      margin-left: 0%;
+      padding-top: 150px; }
       .section.welcome .section__content:last-child {
         margin-right: 0; } }
 
 .nav-bar {
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
-  height: 35px;
-  line-height: 35px;
-  margin-top: 0.75em;
   position: fixed;
-  text-align: center;
   width: 100%;
   z-index: 100; }
+  @media screen and (min-width: 900px) {
+    .nav-bar {
+      background-color: rgba(0, 17, 30, 0.25);
+      line-height: 50px;
+      text-align: center; } }
+  .nav-bar__mobile-menu {
+    text-align: right;
+    z-index: 100; }
+    @media screen and (min-width: 900px) {
+      .nav-bar__mobile-menu {
+        display: none; } }
 
 .nav-link-list {
   max-width: 1200px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  -webkit-transition: all, 0.2s, ease-in-out;
+  transition: all, 0.2s, ease-in-out;
+  position: relative;
+  width: 100%; }
   .nav-link-list::after {
     clear: both;
     content: "";
     display: block; }
+  @media screen and (max-width: 900px) {
+    .nav-link-list {
+      -webkit-transform: translateY(-150%);
+      transform: translateY(-150%);
+      position: absolute; }
+      .nav-link-list.mobile-nav-visible {
+        -webkit-transform: translateY(0);
+        transform: translateY(0); } }
 
 .nav-link-item {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 14.70196%;
-  display: inline-block;
+  background-color: rgba(0, 17, 30, 0.5);
   font-size: 1.125em;
   letter-spacing: 1px;
+  padding: 0.75em;
   text-transform: uppercase; }
-  .nav-link-item:last-child {
-    margin-right: 0; }
+  @media screen and (min-width: 900px) {
+    .nav-link-item {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 14.70196%;
+      background-color: transparent;
+      display: inline-block;
+      padding: 0; }
+      .nav-link-item:last-child {
+        margin-right: 0; } }
   .nav-link-item a {
     color: #fff; }
