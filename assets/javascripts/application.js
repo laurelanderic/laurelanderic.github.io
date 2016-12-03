@@ -101,7 +101,6 @@ $(function() {
   for (var i = 0; i < slides.length; i++) {
     new ScrollMagic.Scene({triggerElement: slides[i]})
       .setPin(slides[i])
-      .addIndicators()
       .addTo(controller)
   }
 
@@ -110,7 +109,6 @@ $(function() {
     new ScrollMagic.Scene({triggerElement: slides[j]})
       .setVelocity(slideContents[j], {opacity: 0}, { duration: 300 })
       .offset(offsetHeight)
-      .addIndicators()
       .addTo(controller)
   }
 })
