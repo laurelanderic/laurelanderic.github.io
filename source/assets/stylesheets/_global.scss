@@ -71,13 +71,9 @@ canvas {
 .section {
   display: flex;
   flex-direction: column;
-  height: 600px;
+  height: 100vh;
+  justify-content: center;
   width: 100% !important;
-
-  @include media($medium-screen-up) {
-    height: 100vh;
-    justify-content: center;
-  }
 
   &__inner {
     @include outer-container;
@@ -93,6 +89,10 @@ canvas {
   }
 
   &__content {
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 400;
+    }
+
     @include media($medium-screen-up) {
       @include span-columns(8);
       @include shift(2);
@@ -101,8 +101,9 @@ canvas {
 
   // Section types
   &.welcome,
+  &.about-us,
   &.event-info,
-  &.travel-accommodations,
+  &.travel,
   &.registry,
   &.join-us {
     color: $white;
@@ -113,14 +114,23 @@ canvas {
   &.welcome {
     .section__content {
       @include media($medium-screen-up) {
+        padding-top: 150px;
         @include span-columns(12);
         @include shift(0);
-        padding-top: 150px;
       }
     }
   }
 
+  &.about-us {
+    img {
+      background-color: #fff;
+      box-shadow: $base-box-shadow;
+      border-radius: $base-border-radius;
+      padding: $base-spacing;
+    }
+  }
+
   &.event-info {}
-  &.travel-accommodations {}
+  &.travel {}
   &.join-us {}
 }

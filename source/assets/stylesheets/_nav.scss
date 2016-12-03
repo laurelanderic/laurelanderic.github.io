@@ -6,13 +6,15 @@ $horizontal-bar-mode: new-breakpoint(min-width $nav-breakpoint 12);
 .nav-bar {
   @extend %fade-in-fast;
   @include animation-delay(2s);
-  // position: relative;
+  background-color: shade($sky-gradient-start, 15%);
+  border-bottom: solid 1px transparentize(#fff, 0.5);
   position: fixed;
   width: 100%;
   z-index: 100;
 
   @include media($horizontal-bar-mode) {
     background-color: transparentize($sky-gradient-stop, 0.75);
+    border-bottom: 0;
     line-height: $nav-bar-height;
     text-align: center;
   }
@@ -42,7 +44,7 @@ $horizontal-bar-mode: new-breakpoint(min-width $nav-breakpoint 12);
 }
 
 .nav-link-item {
-  background-color: transparentize($sky-gradient-stop, 0.5);
+  background-color: shade($sky-gradient-start, 15%);
   font-size: $base-font-size * 1.125;
   letter-spacing: 1px;
   padding: $small-spacing;
