@@ -1,10 +1,15 @@
+@mixin link-color($color) {
+  color: $color;
+  &:hover { color: transparentize($color, 0.25); }
+}
+
 @include keyframes(fadeIn) {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
 
 %fade-in-slow {
-  @include animation(fadeIn 3s ease-in);
+  @include animation(fadeIn 2s ease-in);
   @include animation-fill-mode(backwards);
   @include animation-delay(1s);
 }
@@ -78,7 +83,8 @@ canvas {
   &__inner {
     @include outer-container;
     padding: $base-spacing;
-    @include media($medium-screen-up) { font-size: modular-scale(2); padding: 0; }
+    @include media($medium-screen-up) { font-size: modular-scale(1); padding: 0; }
+    @include media($large-screen-up) { font-size: modular-scale(2); padding: 0; }
   }
 
   &__header {
@@ -93,17 +99,24 @@ canvas {
       font-weight: 400;
     }
 
+    ul li {
+      margin-bottom: $base-spacing;
+    }
+
     @include media($medium-screen-up) {
       @include span-columns(8);
       @include shift(2);
     }
   }
 
+  a {@include link-color(#08b3d8);}
+
   // Section types
   &.welcome,
   &.about-us,
   &.event-info,
   &.travel,
+  &.accommodations,
   &.registry,
   &.join-us {
     color: $white;
@@ -132,5 +145,6 @@ canvas {
 
   &.event-info {}
   &.travel {}
+  &.accommodations {}
   &.join-us {}
 }
