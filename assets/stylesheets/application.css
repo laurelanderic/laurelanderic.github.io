@@ -368,7 +368,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: 0.75em 1.5em;
+  padding: 0.7em 1.4em;
   text-decoration: none;
   -webkit-transition: background-color 150ms ease;
   transition: background-color 150ms ease;
@@ -395,13 +395,13 @@ fieldset {
 
 legend {
   font-weight: 600;
-  margin-bottom: 0.375em;
+  margin-bottom: 0.35em;
   padding: 0; }
 
 label {
   display: block;
   font-weight: 600;
-  margin-bottom: 0.375em; }
+  margin-bottom: 0.35em; }
 
 input,
 select {
@@ -418,8 +418,8 @@ select[multiple] {
   box-sizing: border-box;
   font-family: "futura-pt";
   font-size: 1em;
-  margin-bottom: 0.75em;
-  padding: 0.5em;
+  margin-bottom: 0.7em;
+  padding: 0.46667em;
   -webkit-transition: border-color 150ms ease;
   transition: border-color 150ms ease;
   width: 100%; }
@@ -450,14 +450,14 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   display: inline;
-  margin-right: 0.375em; }
+  margin-right: 0.35em; }
 
 [type="file"] {
-  margin-bottom: 0.75em;
+  margin-bottom: 0.7em;
   width: 100%; }
 
 select {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.4em;
   max-width: 100%;
   width: auto; }
 
@@ -468,28 +468,28 @@ ol {
   padding: 0; }
 
 dl {
-  margin-bottom: 0.75em; }
+  margin-bottom: 0.7em; }
   dl dt {
     font-weight: 600;
-    margin-top: 0.75em; }
+    margin-top: 0.7em; }
   dl dd {
     margin: 0; }
 
 table {
   border-collapse: collapse;
-  margin: 0.75em 0;
+  margin: 0.7em 0;
   table-layout: fixed;
   width: 100%; }
 
 th {
   border-bottom: 1px solid #a6a6a6;
   font-weight: 600;
-  padding: 0.75em 0;
+  padding: 0.7em 0;
   text-align: left; }
 
 td {
   border-bottom: 1px solid #ddd;
-  padding: 0.75em 0; }
+  padding: 0.7em 0; }
 
 tr,
 td,
@@ -500,7 +500,7 @@ body {
   color: #333;
   font-family: "futura-pt";
   font-size: 1em;
-  line-height: 1.5; }
+  line-height: 1.4; }
 
 h1,
 h2,
@@ -511,10 +511,10 @@ h6 {
   font-family: "futura-pt";
   font-size: 1em;
   line-height: 1.2;
-  margin: 0 0 0.75em; }
+  margin: 0 0 0.7em; }
 
 p {
-  margin: 0 0 0.75em; }
+  margin: 0 0 0.7em; }
 
 a {
   color: #1565c0;
@@ -529,7 +529,7 @@ hr {
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  margin: 1.5em 0; }
+  margin: 1.4em 0; }
 
 img,
 picture {
@@ -553,8 +553,8 @@ html {
   100% {
     opacity: 1; } }
 canvas {
-  -webkit-animation: fadeIn 3s ease-in;
-  animation: fadeIn 3s ease-in;
+  -webkit-animation: fadeIn 2s ease-in;
+  animation: fadeIn 2s ease-in;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
   -webkit-animation-delay: 1s;
@@ -625,7 +625,7 @@ canvas {
   font-size: 1em;
   font-style: italic;
   letter-spacing: 2px;
-  margin-top: 1.5em;
+  margin-top: 1.4em;
   text-align: center; }
 
 .section {
@@ -645,12 +645,16 @@ canvas {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5em; }
+    padding: 1.4em; }
     .section__inner::after {
       clear: both;
       content: "";
       display: block; }
     @media screen and (min-width: 600px) {
+      .section__inner {
+        font-size: 1.25em;
+        padding: 0; } }
+    @media screen and (min-width: 900px) {
       .section__inner {
         font-size: 1.5625em;
         padding: 0; } }
@@ -665,6 +669,8 @@ canvas {
         margin-right: 0; } }
   .section__content h1, .section__content h2, .section__content h3, .section__content h4, .section__content h5, .section__content h6 {
     font-weight: 400; }
+  .section__content ul li {
+    margin-bottom: 1.4em; }
   @media screen and (min-width: 600px) {
     .section__content {
       float: left;
@@ -674,11 +680,15 @@ canvas {
       margin-left: 17.05961%; }
       .section__content:last-child {
         margin-right: 0; } }
-  .section.welcome, .section.about-us, .section.event-info, .section.travel, .section.registry, .section.join-us {
+  .section a {
+    color: #08b3d8; }
+    .section a:hover {
+      color: rgba(8, 179, 216, 0.75); }
+  .section.welcome, .section.about-us, .section.event-info, .section.travel, .section.accommodations, .section.registry, .section.join-us {
     color: #fff;
     margin-bottom: 200px; }
     @media screen and (min-width: 600px) {
-      .section.welcome, .section.about-us, .section.event-info, .section.travel, .section.registry, .section.join-us {
+      .section.welcome, .section.about-us, .section.event-info, .section.travel, .section.accommodations, .section.registry, .section.join-us {
         margin-bottom: 500px; } }
   @media screen and (min-width: 600px) {
     .section.welcome .section__content {
@@ -694,7 +704,7 @@ canvas {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
-    padding: 1.5em; }
+    padding: 1.4em; }
 
 .nav-bar {
   -webkit-animation-delay: 2s;
@@ -742,7 +752,7 @@ canvas {
   background-color: #033450;
   font-size: 1.125em;
   letter-spacing: 1px;
-  padding: 0.75em;
+  padding: 0.7em;
   text-transform: uppercase; }
   @media screen and (min-width: 900px) {
     .nav-link-item {
