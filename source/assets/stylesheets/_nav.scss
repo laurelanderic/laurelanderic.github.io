@@ -1,5 +1,5 @@
 $nav-bar-height: 50px;
-$nav-breakpoint: 900px;
+$nav-breakpoint: 600px;
 $mobile-nav-mode: new-breakpoint(max-width $nav-breakpoint 12);
 $horizontal-bar-mode: new-breakpoint(min-width $nav-breakpoint 12);
 
@@ -28,7 +28,6 @@ $horizontal-bar-mode: new-breakpoint(min-width $nav-breakpoint 12);
 }
 
 .nav-link-list {
-  @include outer-container;
   @include transition(all, 0.2s, ease-in-out);
   position: relative;
   width: 100%;
@@ -41,21 +40,26 @@ $horizontal-bar-mode: new-breakpoint(min-width $nav-breakpoint 12);
       @include transform(translateY(0));
     }
   }
+
+  @include media($horizontal-bar-mode) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 .nav-link-item {
   background-color: shade($sky-gradient-start, 15%);
-  font-size: $base-font-size * 1.125;
+  font-size: $base-font-size * 0.95;
   letter-spacing: 1px;
   padding: $small-spacing;
   text-transform: uppercase;
 
   @include media($horizontal-bar-mode) {
-    @include span-columns(2);
     background-color: transparent;
-    display: inline-block;
+    flex: 0 1 auto;
     padding: 0;
   }
 
-  a { color: #fff }
+  a { color: #fff; }
 }
